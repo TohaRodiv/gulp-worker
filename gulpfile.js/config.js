@@ -25,12 +25,8 @@ const config = {
 	 * Tinypng api-key
 	 */
 	TINYPNG_API_KEY: [
-		"gPC3S4MSYBxXtsYwQV8KTrlkSgW3p086",
-		"Hj2X6zbdNDqgxr1jY80Tczp16g5SDml0",
-		"9Qzppz2DhRBxTFyrDTHlk3z8jy4YFQs7",
-		"fSb89VcLlhqDwQQ8dRsqSgWn7GdwyVzW",
-		"PHcNW6d75ghmfjfyNb2wMVWwfTNMdXPt",
-	][4],
+		"API-KEY"
+	][0],
 	/**
 	 * Root dir
 	 */
