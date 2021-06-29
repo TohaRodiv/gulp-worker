@@ -1,33 +1,39 @@
+// @ts-check
+"use strict";
+
 const { series, parallel } = require("gulp");
+const path = require("path");
 
-const genDoc = require("./tasks/jsdoc");
-const clean = require("./tasks/clean");
+const requireTask = (/** @type {string} */ taskname) => require (path.join (__dirname, "tasks", taskname));
 
-const imagemin = require("./tasks/imagemin");
-const tinypngCompress = require("./tasks/tinypng");
-const toWebp = require("./tasks/to-webp");
-const webp2png = require("./tasks/webp-to-png");
-const toSvg = require("./tasks/to-svg");
+const genDoc = requireTask ("jsdoc");
+const clean = requireTask("clean");
 
-const lighthouse = require("./tasks/lighthouse");
+const imagemin = requireTask("imagemin");
+const tinypngCompress = requireTask("tinypng");
+const toWebp = requireTask("to-webp");
+const webp2png = requireTask("webp-to-png");
+const toSvg = requireTask("to-svg");
 
-const pug = require("./tasks/pug");
-const sass = require("./tasks/sass");
-const js = require("./tasks/js");
-const html = require("./tasks/html");
-const css = require("./tasks/css");
+const lighthouse = requireTask("lighthouse");
 
-const concatJs = require("./tasks/concat-js");
-const concatCss = require("./tasks/concat-css");
+const pug = requireTask("pug");
+const sass = requireTask("sass");
+const js = requireTask("js");
+const html = requireTask("html");
+const css = requireTask("css");
 
-const watcher = require("./tasks/watch");
-const createServer = require("./tasks/server");
-const build = require("./tasks/build");
+const concatJs = requireTask("concat-js");
+const concatCss = requireTask("concat-css");
 
-const htmlToPug = require("./tasks/html-to-pug");
-const convertEncoding = require("./tasks/convert-encoding");
-const zip = require("./tasks/zip");
-const genJsdoc = require ("./tasks/gen-jsdoc");
+const watcher = requireTask("watch");
+const createServer = requireTask("server");
+const build = requireTask("build");
+
+const htmlToPug = requireTask("html-to-pug");
+const convertEncoding = requireTask("convert-encoding");
+const zip = requireTask("zip");
+const genJsdoc = requireTask("gen-jsdoc");
 
 
 const setMode = (isProduction) => (cb) => {
