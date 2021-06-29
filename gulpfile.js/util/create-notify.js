@@ -1,6 +1,7 @@
-const notify = require("gulp-notify");
-const { root } = require("./../config");
 const path = require("path");
+
+const notify = require("gulp-notify");
+const { root } = require(path.join (__dirname, "..", "config"));
 
 /**
  * @function createNotify
